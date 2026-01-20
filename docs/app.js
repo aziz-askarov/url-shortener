@@ -1,8 +1,3 @@
-const shortenBtn = document.getElementById('shortenBtn');
-const longUrlInput = document.getElementById('longUrl');
-const resultDiv = document.getElementById('result');
-
-// API Base URL
 const baseApiUrl = "https://azizbekaskarov.bsite.net/api/";
 
 shortenBtn.addEventListener('click', async () => {
@@ -12,9 +7,6 @@ shortenBtn.addEventListener('click', async () => {
         resultDiv.textContent = "Iltimos, URL kiriting!";
         return;
     }
-
-    // Loading holatini ko'rsatish
-    resultDiv.innerHTML = `<p>Ishlayapti... ⏳</p>`;
 
     try {
         const response = await fetch(baseApiUrl, {
@@ -31,14 +23,11 @@ shortenBtn.addEventListener('click', async () => {
             return;
         }
 
-        const data = await response.json(); // { shortUrl, qrImage }
-
+        const data = await response.json(); // JSON format
         resultDiv.innerHTML = `
-            <p>Qisqartirilgan URL: <a href="${data.shortUrl}" target="_blank">${data.shortUrl}</a></p>
-            <p>QR Code:</p>
-            <img src="data:image/png;base64,${data.qrImage}" alt="QR Code" style="width:200px;height:200px;" />
+            Qisqartirilgan URL: <a href="${data.shortUrl}" target="_blank">${data.shortUrl}</a><br/>
+            <img src="data:image/png;base64,${data.qrImage}" alt="QR code"/>
         `;
-
     } catch (error) {
         resultDiv.textContent = "API bilan bog‘lanishda xatolik yuz berdi.";
         console.error(error);
