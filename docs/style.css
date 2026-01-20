@@ -1,6 +1,6 @@
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background: linear-gradient(to right, #6a11cb, #2575fc);
+    font-family: Arial, sans-serif;
+    background: #f0f2f5;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -10,37 +10,35 @@ body {
 
 .container {
     background: white;
-    padding: 40px 30px;
-    border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
     text-align: center;
-    width: 100%;
-    max-width: 400px;
+    width: 350px;
 }
 
 h1 {
-    color: #333;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 input {
     width: 100%;
     padding: 12px;
-    margin-bottom: 15px;
-    border-radius: 8px;
+    border-radius: 6px;
     border: 1px solid #ccc;
-    font-size: 16px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
 }
 
 button {
-    padding: 12px 25px;
+    padding: 12px 20px;
     border: none;
     background: #007bff;
     color: white;
-    border-radius: 8px;
+    border-radius: 6px;
     cursor: pointer;
+    width: 100%;
     font-size: 16px;
-    transition: background 0.3s;
 }
 
 button:hover {
@@ -54,6 +52,16 @@ button:hover {
 
 #result img {
     margin-top: 10px;
-    border: 2px solid #007bff;
-    border-radius: 8px;
+    max-width: 100%;
+    height: auto;
+}
+
+.hidden {
+    display: none;
+}
+
+#loading {
+    margin-top: 10px;
+    color: #555;
+    font-style: italic;
 }
